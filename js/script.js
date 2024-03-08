@@ -1,6 +1,7 @@
 import { movies } from './db.js'
 let list = document. querySelector (".promo__interactive-list");
 let video = document. querySelector (".video");
+let p = document. querySelector (".desc-p");
 
 for (let item of movies) {
     console.log(item);
@@ -22,5 +23,14 @@ for (let item of movies) {
 }
 li.onclick = () => {
  video.src = item.Website
+ p.innerHTML = ''
+ p.style.padding = ''
+}
+li.ondblclick = () => {
+  
+    p.style.padding = '50px 30px'
+    p.innerHTML = item.Desc
+   
+    video.src = ''
 }
 }
